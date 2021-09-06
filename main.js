@@ -2,6 +2,10 @@ objects = []
 status = ""
 song = ""
 
+function preload() {
+    song = loadSound("TakiTaki.mp3")
+}
+
 function setup() {
     canvas = createCanvas(380, 380)
     canvas.center()
@@ -10,10 +14,6 @@ function setup() {
     video.hide()
     objectDetector = ml5.objectDetector('cocossd', modelLoaded)
     document.getElementById("status").innerHTML = "status : detecting Objects"
-}
-
-function preload() {
-    song = loadSound("Taki Taki.mp3")
 }
 
 function modelLoaded() {
